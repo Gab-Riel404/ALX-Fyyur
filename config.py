@@ -1,4 +1,5 @@
 import os
+
 SECRET_KEY = os.urandom(32)
 # Grabs the folder where the script runs.
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -7,15 +8,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 DEBUG = True
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
-# Connect to the database
-DB_USERNAME="4rag3"
-DB_PASSWORD="time2quill"
-DB_HOST="localhost"
-DB_PORT=5432
-DATABASE_NAME="fyyur"
 
-# TODO IMPLEMENT DATABASE URL
-SQLALCHEMY_DATABASE_URI = "postgresql://{}:{}@{}:{}/{}".format(DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DATABASE_NAME)
+#TODO IMPLEMENT DATABASE URL
+#SQLALCHEMY_DATABASE_URI = "postgresql://{}:{}@{}:{}/{}".format(DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DATABASE_NAME)
 
 #URI for Production
-#SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
